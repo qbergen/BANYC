@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "329975696468",
+    "firebase_url": "https://youth101-user-reg.firebaseio.com",
+    "project_id": "youth101-user-reg",
+    "storage_bucket": "youth101-user-reg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329975696468:android:6b5fe6bfb61f3753",
+        "android_client_info": {
+          "package_name": "com.example.queenabergen.banyc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329975696468-g3hhr8g68otr7dln13hpsenj66eg344d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKLsgrLQkx7o97fBtVFTfpTF2TL9L56Io"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
