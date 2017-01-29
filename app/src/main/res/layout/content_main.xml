@@ -13,8 +13,85 @@
     tools:context="com.example.queenabergen.banyc.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
+    <ImageView
+        android:id="@+id/logo_singup_image"
+        android:layout_width="match_parent"
+        android:layout_height="160dp" />
+
+    <EditText
+        android:id="@+id/email_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/input_background"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/email_address"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_background"
+        android:paddingLeft="20dp" />
+
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/password_input"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="10"
+        android:text="Sign Up"
+        android:textColor="#080808"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/signin_btn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/password_input"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/signup_btn"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="10"
+        android:text="Sign In"
+        android:textColor="#080808"
+        android:textSize="30sp" />
+    <LinearLayout
+        android:id="@+id/socialmedia_login_container"
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@+id/signup_btn"/>
+    <ImageView
+        android:id="@+id/facebook_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signup_btn"
+        android:layout_weight="1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/facebookbutton" />
+
+    <ImageView
+        android:id="@+id/google_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@+id/signup_btn"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/facebook_btn"
+        android:src="@drawable/googlebutton" />
+
 </RelativeLayout>
