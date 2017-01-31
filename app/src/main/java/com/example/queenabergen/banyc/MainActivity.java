@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_main);
+        setContentView(R.layout.content_main);
 
         loginView();
-
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void loginView(){
+        mAuth = FirebaseAuth.getInstance();
         facebookView = (ImageView) findViewById(R.id.facebook_btn);
         googleView = (ImageView) findViewById(R.id.google_btn);
         passwordInput = (EditText) findViewById(R.id.password_input);
@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
         emailInput = (EditText) findViewById(R.id.email_address);
         emailInput.setElevation(50);
         signInBTN = (Button) findViewById(R.id.signin_btn);
-        signInBTN.setElevation(150);
+        signInBTN.setElevation(50);
         signInBTN.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mAuth = FirebaseAuth.getInstance();
+            public void onClick(final View v) {
                 mAuthListener = new FirebaseAuth.AuthStateListener() {
                     @Override
                     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -62,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                         if (user != null) {
                             // User is signed in
                             Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                            Intent intent = new Intent(getApplicationContext(), LandingPage.class);
+                            startActivity(intent);
                         } else {
                             // User is signed out
                             Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -89,10 +90,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Toast.makeText(MainActivity.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
@@ -100,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Created Account Successfully",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), LandingPage.class);
+                            startActivity(intent);
 
                         }
 

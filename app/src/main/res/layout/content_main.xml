@@ -5,13 +5,13 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightYellow"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.queenabergen.banyc.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:context="com.example.queenabergen.banyc.MainActivity">
 
     <ImageView
         android:id="@+id/logo_singup_image"
@@ -22,9 +22,11 @@
         android:id="@+id/email_address"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="200dp"
-        android:inputType="textEmailAddress"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logo_singup_image"
+        android:layout_marginTop="40dp"
         android:background="@drawable/input_background"
+        android:inputType="textEmailAddress"
         android:paddingLeft="20dp" />
 
     <EditText
@@ -33,39 +35,41 @@
         android:layout_height="50dp"
         android:layout_below="@id/email_address"
         android:layout_marginTop="20dp"
-        android:inputType="textWebPassword"
         android:background="@drawable/input_background"
+        android:inputType="textWebPassword"
         android:paddingLeft="20dp" />
 
-    <Button
-        android:id="@+id/signup_btn"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/password_input"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="7"
-        android:shadowDy="7"
-        android:shadowRadius="10"
-        android:text="Sign Up"
-        android:textColor="#080808"
-        android:textSize="30sp" />
 
     <Button
         android:id="@+id/signin_btn"
         android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@id/password_input"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/signup_btn"
+        android:gravity="center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="7"
         android:shadowDy="7"
         android:shadowRadius="10"
         android:text="Sign In"
+        android:textColor="#080808"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/signin_btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="10"
+        android:text="Create Account"
         android:textColor="#080808"
         android:textSize="30sp" />
 
@@ -82,9 +86,9 @@
             android:id="@+id/facebook_btn"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:src="@drawable/facebookicon"
             android:layout_below="@+id/signup_btn"
-            android:layout_weight="1"
-            android:src="@drawable/facebookbutton" />
+            android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/google_btn"
@@ -92,8 +96,10 @@
             android:layout_height="60dp"
             android:layout_below="@+id/signup_btn"
             android:layout_marginLeft="20dp"
+            android:src="@drawable/google"
             android:layout_toRightOf="@+id/facebook_btn"
-            android:layout_weight="1"
-            android:src="@drawable/googlebutton" />
+            android:layout_weight="1" />
     </LinearLayout>
+
+
 </RelativeLayout>
