@@ -11,20 +11,7 @@ public class LandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
-//
-//        recycler();
-////        navigationView();
-//        InformationCenter.start(getApplicationContext(), rv);
-//    }
-//
-//    private void recycler() {
-//        rv = (RecyclerView) findViewById(R.id.rview);
-//        rv.setLayoutManager(new LinearLayoutManager(this));
-//    }
-//
-//    public static void navigationView() {
-//        NavigationActivity navi = new NavigationActivity();
-//        navi.navigationView();
-  }
+
+    }
 
 }

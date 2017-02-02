@@ -11,11 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -35,19 +31,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
-
         loginView();
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void loginView(){
+    private void loginView() {
         mAuth = FirebaseAuth.getInstance();
         facebookView = (ImageView) findViewById(R.id.facebook_btn);
         googleView = (ImageView) findViewById(R.id.google_btn);
         passwordInput = (EditText) findViewById(R.id.password_input);
         passwordInput.setElevation(50);
-        emailInput = (EditText) findViewById(R.id.email_address);
+        emailInput = (EditText) findViewById(R.id.email_input);
         emailInput.setElevation(50);
         signInBTN = (Button) findViewById(R.id.signin_btn);
         signInBTN.setElevation(50);
@@ -76,34 +71,10 @@ public class MainActivity extends AppCompatActivity {
         signupBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
+                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                startActivity(intent);
             }
         });
-    }
-
-    public void registerUser() {
-
-        String emailaddress = emailInput.getText().toString();
-        String password = passwordInput.getText().toString();
-        mAuth.createUserWithEmailAndPassword(emailaddress, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, R.string.auth_failed,
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Created Account Successfully",
-                                    Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), LandingPage.class);
-                            startActivity(intent);
-
-                        }
-
-                        // ...
-                    }
-                });
     }
 
 

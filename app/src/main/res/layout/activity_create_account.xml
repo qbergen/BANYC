@@ -15,38 +15,57 @@
     <EditText
         android:id="@+id/first_Name"
         android:layout_width="match_parent"
-        android:background="@drawable/input_background"
         android:layout_height="50dp"
-        android:hint="First Name"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/input_background"
         android:gravity="center"
-        android:layout_marginTop="90dp"/>
+        android:hint="First Name"
+        android:inputType="text" />
 
     <EditText
-        android:layout_marginTop="15dp"
         android:id="@+id/last_Name"
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/input_background"
-        android:hint="Last Name"
         android:gravity="center"
-        android:layout_height="50dp" />
+        android:hint="Last Name"
+        android:inputType="text" />
 
     <EditText
-        android:layout_marginTop="15dp"
         android:id="@+id/email_Input"
         android:layout_width="match_parent"
-        android:hint="Email Address"
-        android:gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/input_background"
-        android:layout_height="50dp" />
+        android:gravity="center"
+        android:hint="Email Address"
+        android:inputType="textWebEmailAddress" />
 
     <EditText
-        android:layout_marginTop="15dp"
         android:id="@+id/password_Input"
         android:layout_width="match_parent"
-        android:hint="Create Password"
-        android:gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/input_background"
-        android:layout_height="50dp" />
+        android:gravity="center"
+        android:hint="Create Password"
+        android:inputType="textWebPassword" />
 
+    <Button
+        android:id="@+id/createAccount_btn"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/password_Input"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="7"
+        android:shadowDy="7"
+        android:shadowRadius="10"
+        android:text="Create Account"
+        android:textColor="#080808"
+        android:textSize="30sp" />
 
 </LinearLayout>
