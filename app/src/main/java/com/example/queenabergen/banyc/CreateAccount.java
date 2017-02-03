@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,23 +23,24 @@ public class CreateAccount extends AppCompatActivity {
     private EditText mfirstName;
     private EditText mLastName;
     private Button createAccount;
+    private ImageView youthLogo;
     public EditText emailInput;
     public EditText passwordInput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
-        mfirstName = (EditText)findViewById(R.id.first_Name);
-        mLastName = (EditText)findViewById(R.id.last_Name);
-        emailInput = (EditText)findViewById(R.id.email_Input);
-        passwordInput = (EditText)findViewById(R.id.password_Input);
-        createAccount = (Button)findViewById(R.id.createAccount_btn);
+        mfirstName = (EditText) findViewById(R.id.first_Name);
+        mLastName = (EditText) findViewById(R.id.last_Name);
+        emailInput = (EditText) findViewById(R.id.email_Input);
+        passwordInput = (EditText) findViewById(R.id.password_Input);
+        createAccount = (Button) findViewById(R.id.createAccount_btn);
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();
-                finish();
             }
         });
     }

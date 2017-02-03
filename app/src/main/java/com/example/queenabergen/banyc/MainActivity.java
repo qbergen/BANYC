@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.facebook.CallbackManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText passwordInput;
     public ImageView facebookView;
     public ImageView googleView;
+    private CallbackManager mCallbackManager;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -37,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void loginView() {
-        mAuth = FirebaseAuth.getInstance();
-        facebookView = (ImageView) findViewById(R.id.facebook_btn);
         googleView = (ImageView) findViewById(R.id.google_btn);
         passwordInput = (EditText) findViewById(R.id.password_input);
         passwordInput.setElevation(50);
