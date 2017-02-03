@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.example.queenabergen.banyc.recyclerview.RvAdapter;
 import com.example.queenabergen.banyc.subjects.youthemploy.YouthEmployment;
 
 import java.util.List;
@@ -22,9 +23,10 @@ public class InformationCenter {
 
     private static final String BASE_URL = "https://data.cityofnewyork.us/";
     private static List<YouthEmployment> info;
+    private static RecyclerView rv;
 
     public static void start(final Context applicationContext, RecyclerView rv){
-
+        InformationCenter.rv = rv;
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -38,6 +40,7 @@ public class InformationCenter {
             @Override
             public void onResponse(Call<List<YouthEmployment>> call, Response<List<YouthEmployment>> response) {
                 info = response.body();
+                initializeAdapter();
                 //todo pass the info to the RecyclerView Adapter, below :
                 // (Make sure to use, "rv" that's passed into this method)
 
@@ -51,4 +54,8 @@ public class InformationCenter {
         });
     }
 
+    private static void initializeAdapter(){
+        RvAdapter adapter = new RvAdapter(info);
+        rv.setAdapter(adapter);
+    }
 }
