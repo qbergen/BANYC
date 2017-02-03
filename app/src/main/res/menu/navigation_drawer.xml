@@ -3,11 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:title="Take Quiz" />
+            android:id="@+id/stem"
+            android:title="S.T.E.M" />
         <item
-            android:id="@+id/nav_gallery"
-            android:title="Resources" />
+            android:id="@+id/aftersp"
+            android:title="After School Programs" />
+        <item
+            android:id="@+id/youth_employment"
+            android:title="Youth Employment" />
+        <item
+            android:id="@+id/search_near_me"
+            android:title="Near Me" />
     </group>
 
     <item android:title="Communicate">
@@ -15,11 +21,11 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Account Settings" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Sign Out" />
         </menu>
     </item>
 
