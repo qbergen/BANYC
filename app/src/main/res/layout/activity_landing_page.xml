@@ -12,7 +12,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:visibility="visible"
     tools:context="com.example.queenabergen.banyc.LandingPage">
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -20,6 +19,7 @@
         android:background="?attr/colorPrimary"
         android:backgroundTint="@color/yellow"
         app:popupTheme="@style/AppTheme.PopupOverlay">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,5 +42,11 @@
         </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

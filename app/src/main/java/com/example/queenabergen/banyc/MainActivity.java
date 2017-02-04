@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void loginView() {
+    private void loginView(){
+        mAuth = FirebaseAuth.getInstance();
+        facebookView = (ImageView) findViewById(R.id.login_button);
         googleView = (ImageView) findViewById(R.id.google_btn);
         passwordInput = (EditText) findViewById(R.id.password_input);
         passwordInput.setElevation(50);
@@ -47,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
         signInBTN = (Button) findViewById(R.id.signin_btn);
         signInBTN.setElevation(50);
         signInBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
+            public void onClick(View v) {
                 mAuthListener = new FirebaseAuth.AuthStateListener() {
                     @Override
                     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

@@ -1,5 +1,6 @@
 package com.example.queenabergen.banyc.recyclerview;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,14 +10,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.queenabergen.banyc.R;
+import com.example.queenabergen.banyc.maps.MapsActivity;
 import com.example.queenabergen.banyc.subjects.youthemploy.YouthEmployment;
 
 import java.util.List;
 
+import static com.example.queenabergen.banyc.R.layout.item;
+
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
 
     public static class ResourceVH extends RecyclerView.ViewHolder {
-
+        List<YouthEmployment> mapData;
+        String latitude,longitude, programName, programSite, programTypeName;
         CardView cv;
         TextView siteName, programType, location_1, agency, boroughCommunity, program, gradeLevelAgeGroup, contactNumber;
 
@@ -39,8 +44,29 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(itemView.getContext(), text, duration);
                     toast.show();
+                    if (latitude == null && longitude == null) {
+                        Toast.makeText(itemView.getContext(), "Cannot find the location on map", Toast.LENGTH_LONG).show();
+                    }
+                    else if (latitude != null && longitude != null) {
+                        Intent intent = new Intent(itemView.getContext(), MapsActivity.class);
+                        intent.putExtra("Latitude",latitude);
+                        intent.putExtra("Longitude", longitude);
+                        intent.putExtra("Name", programName);
+                        intent.putExtra("Type", programTypeName);
+                        intent.putExtra("Site", programSite);
+                        itemView.getContext().startActivity(intent);
+                    }
                 }
             });
+        }
+
+
+        public void sendMapInfo(YouthEmployment youthEmployment) {
+            latitude = youthEmployment.getYouthEmploymentLocation1().getLatitude();
+            longitude = youthEmployment.getYouthEmploymentLocation1().getLongitude();
+            programName = youthEmployment.getProgram();
+            programSite = youthEmployment.getSiteName();
+            programTypeName = youthEmployment.getProgramType();
         }
     }
 
@@ -66,13 +92,12 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
     public void onBindViewHolder(ResourceVH resourceVH, int i) {
         resourceVH.siteName.setText(data.get(i).getSiteName());
         resourceVH.programType.setText(data.get(i).getProgramType());
-        resourceVH.location_1.setText(data.get(i).getYouthEmploymentLocation1().getLatitude() + "," + data.get(i).getYouthEmploymentLocation1().getLongitude());
         resourceVH.agency.setText(data.get(i).getAgency());
         resourceVH.boroughCommunity.setText(data.get(i).getBoroughCommunity());
         resourceVH.program.setText(data.get(i).getProgram());
         resourceVH.gradeLevelAgeGroup.setText(data.get(i).getGradeLevelAgeGroup());
         resourceVH.contactNumber.setText(data.get(i).getContactNumber());
-
+        resourceVH.sendMapInfo(data.get(i));
     }
 
     @Override
