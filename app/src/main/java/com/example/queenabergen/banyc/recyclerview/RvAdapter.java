@@ -18,7 +18,15 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
     public static class ResourceVH extends RecyclerView.ViewHolder {
 
         CardView cv;
-        TextView siteName, programType, location_1, agency, boroughCommunity, program, gradeLevelAgeGroup, contactNumber;
+        TextView siteName,
+                programType,
+                location_1,
+                agency,
+                boroughCommunity,
+                program,
+                gradeLevelAgeGroup,
+                contactNumber;
+
 
         ResourceVH(final View itemView) {
             super(itemView);
