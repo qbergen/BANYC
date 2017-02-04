@@ -158,7 +158,7 @@ public class NaviActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_arts) {
-            Intent artsIntent = new Intent(getApplicationContext(), ArtsAdapter.class);
+            Intent artsIntent = new Intent(getApplicationContext(), ArtsManagementPage.class);
             startActivity(artsIntent);
         } else if (id == R.id.nav_athletics) {
 

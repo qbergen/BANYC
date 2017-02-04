@@ -15,7 +15,6 @@ public class LandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
-
         recycler();
         InformationCenter.start(getApplicationContext(), rv);
     }

@@ -17,8 +17,8 @@
 
         <item
             android:id="@+id/youth_employment"
-            android:icon="@drawable/stemnaviicon"
-            android:title="S.T.E.M" />
+            android:icon="@drawable/stevejobs"
+            android:title="Youth Employment" />
     </group>
 
     <item android:title="Communicate">

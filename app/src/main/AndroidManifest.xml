@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ArtsAdapter"></activity>
+        <activity android:name=".ArtsManagementPage"></activity>
     </application>
 
 </manifest>
