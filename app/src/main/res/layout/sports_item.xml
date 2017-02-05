@@ -1,177 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv"
     android:padding="2dp"
     app:cardCornerRadius="7dp">
 
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:background="#1565C0"
-        >
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/spts_sitename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textStyle="bold"
+            android:text="Site Name"
+            android:textColor="#ffffff"
             android:textSize="25sp"
-            android:text="Site Name" />
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/spts_site_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spts_sitename"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/sports_splash" />
 
         <TextView
             android:id="@+id/spts_program_type_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/spts_site_image"
+            android:text="Program Type: "
             android:textColor="#ffffff"
-            android:layout_below="@id/spts_sitename"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Program Type: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_program_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_sitename"
+            android:layout_below="@id/spts_site_image"
             android:layout_toRightOf="@id/spts_program_type_title"
-            android:textSize="14sp"
-            android:text="Program Type" />
+            android:text="Program Type"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/spts_location_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_program_type_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_program_type_title"
+            android:text="Location: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:text="Location: " />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/spts_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_program_type_title"
             android:layout_toRightOf="@id/spts_location_title"
+            android:text="Location"
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:text="Location" />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/spts_agency_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_location_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_location_title"
+            android:text="Agency: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Agency: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_agency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_location_title"
             android:layout_toRightOf="@id/spts_agency_title"
-            android:textSize="14sp"
-            android:text="Agency" />
+            android:text="Agency"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/spts_borough_comm_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_agency_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_agency_title"
+            android:text="Borough Community: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Borough Community: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_borough_comm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_agency_title"
             android:layout_toRightOf="@id/spts_borough_comm_title"
-            android:textSize="14sp"
-            android:text="Borough Community" />
+            android:text="Borough Community"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/spts_program_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_borough_comm_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_borough_comm_title"
+            android:text="Program: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Program: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_program"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_borough_comm_title"
             android:layout_toRightOf="@id/spts_program_type_title"
-            android:textSize="14sp"
-            android:text="Program" />
+            android:text="Program"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/spts_grade_level_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_program_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_program_title"
+            android:text="Age Level: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Age Level: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_grade_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_program_title"
             android:layout_toRightOf="@id/spts_grade_level_title"
-            android:textSize="14sp"
-            android:text="Grade level Age Group" />
+            android:text="Grade level Age Group"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/spts_contact_number_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_below="@id/spts_grade_level_title"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/spts_grade_level_title"
+            android:text="Contact Number: "
+            android:textColor="#ffffff"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="Contact Number: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/spts_contact_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
             android:layout_below="@id/spts_grade_level_title"
             android:layout_toRightOf="@id/spts_contact_number_title"
-            android:textSize="14sp"
-            android:text="Contact Number" />
+            android:text="Contact Number"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 

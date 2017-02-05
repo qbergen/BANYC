@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +17,12 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.SportsVH> 
     public static class SportsVH extends RecyclerView.ViewHolder {
 
         TextView sptsSiteName, sptsProgramType, sptsLocation, sptsAgency, sptsBoroughCommunity, sptsProgram, sptsGradeAgeGroup, sptsContactNumber;
+        ImageView sitePhoto;
 
         SportsVH(final View itemView) {
             super(itemView);
             sptsSiteName = (TextView) itemView.findViewById(R.id.spts_sitename);
+            sitePhoto = (ImageView) itemView.findViewById(R.id.spts_site_image);
             sptsProgramType = (TextView) itemView.findViewById(R.id.spts_program_type);
             sptsLocation = (TextView) itemView.findViewById(R.id.spts_location);
             sptsAgency = (TextView) itemView.findViewById(R.id.spts_agency);
