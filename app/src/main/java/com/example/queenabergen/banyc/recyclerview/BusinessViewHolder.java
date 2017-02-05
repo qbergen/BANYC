@@ -22,7 +22,6 @@ public class BusinessViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         cv = (CardView) itemView.findViewById(R.id.cv2);
         interest = (TextView) itemView.findViewById(R.id.interest_TV);
-        programName = (TextView) itemView.findViewById(R.id.businessprog_TV);
         program_desc = (TextView) itemView.findViewById(R.id.programdesc_TV);
         onClicks();
 
