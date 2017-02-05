@@ -10,6 +10,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -42,6 +45,9 @@ public class NaviActivity extends AppCompatActivity
     public ImageView facebookView;
     public ImageView googleView;
     public Animation animFadeOut;
+    public LinearLayoutManager linearLayoutManager;
+    public GridLayoutManager gridLayoutManager;
+    public HomePageAdapter homePageAdapter;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -58,6 +64,12 @@ public class NaviActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         setBullentinBoard();
+
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.homePageRecView);
+        gridLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        homePageAdapter = new HomePageAdapter();
+        recyclerView.setAdapter(homePageAdapter);
     }
 
     public void setBullentinBoard() {

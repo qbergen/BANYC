@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.example.queenabergen.banyc.SplashActivity">
 
     <ImageView
@@ -17,5 +17,15 @@
         android:src="@drawable/youthiconapp88"
         android:layout_gravity="center"
         android:scaleType="fitXY"
-        android:layout_height="400dp" />
+        android:layout_height="300dp" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progressBar2"
+        android:layout_weight="1" />
+
+
 </LinearLayout>
