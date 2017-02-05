@@ -21,12 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".NaviActivity">
 
+        <activity android:name=".NaviActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CreateAccount" />
         </activity>
         <activity android:name=".CreateAccount"></activity>
-
         <activity
             android:name=".LandingPage"
             android:label="@string/title_activity_navi"
@@ -43,6 +43,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity android:name=".NaviActivity"></activity>
+        <activity android:name=".ArtsManagementPage" />
+        <activity android:name=".HomePage"></activity>
+        <activity android:name=".sportsresources.SportsRv"></activity>
     </application>
 
 </manifest>
