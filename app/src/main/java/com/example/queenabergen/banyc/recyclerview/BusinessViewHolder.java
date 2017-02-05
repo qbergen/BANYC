@@ -15,8 +15,7 @@ import com.example.queenabergen.banyc.R;
 public class BusinessViewHolder extends RecyclerView.ViewHolder {
     private CardView cv;
     private TextView interest,
-            program_desc,
-            programName;
+            program_desc;
 
     public BusinessViewHolder(final View itemView) {
         super(itemView);

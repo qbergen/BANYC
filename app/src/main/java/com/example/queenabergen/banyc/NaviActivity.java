@@ -21,9 +21,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
-import com.example.queenabergen.banyc.subjects.business.BusinessPage;
 import com.example.queenabergen.banyc.sportsresources.SportsRv;
-  import com.google.firebase.auth.FirebaseAuth;
+import com.example.queenabergen.banyc.subjects.business.BusinessPage;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
@@ -164,6 +164,7 @@ public class NaviActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -173,7 +174,7 @@ public class NaviActivity extends AppCompatActivity
         if (id == R.id.nav_arts) {
             Intent artsIntent = new Intent(getApplicationContext(), ArtsManagementPage.class);
             startActivity(artsIntent);
-        } else if (id == R.id.nav_athletics) {
+        } else if (id == R.id.nav_business) {
             Intent businessInten = new Intent(getApplicationContext(), BusinessPage.class);
             startActivity(businessInten);
         } else if (id == R.id.nav_stem) {
@@ -188,8 +189,12 @@ public class NaviActivity extends AppCompatActivity
         } else if (id == R.id.youth_employment) {
             Intent intent2 = new Intent(getApplicationContext(), LandingPage.class);
             startActivity(intent2);
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

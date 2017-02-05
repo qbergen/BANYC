@@ -6,7 +6,10 @@
 
     <string name="action_settings">Settings</string>
     <string name="auth_failed">failed</string>
-    <string name="facebook_app_id">1849166995341479</string>
+    <string name="facebook_app_id">749906205174785</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_navi">NaviActivity</string>
+    <string name="googlelogin">Sign in with Google</string>
+    <string name="signed_in_fmt">%S</string>
+    <string name="server_client_id">881198950310-</string>
 </resources>
