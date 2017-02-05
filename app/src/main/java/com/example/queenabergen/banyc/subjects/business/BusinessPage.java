@@ -1,13 +1,18 @@
-package com.example.queenabergen.banyc;
+package com.example.queenabergen.banyc.subjects.business;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.queenabergen.banyc.retrofit.InformationCenter;
+import com.example.queenabergen.banyc.R;
+import com.example.queenabergen.banyc.retrofit.BusinessCenter;
 
-public class LandingPage extends AppCompatActivity {
+/**
+ * Created by Hyun on 2/4/17.
+ */
+
+public class BusinessPage extends AppCompatActivity {
 
     private RecyclerView rv;
 
@@ -17,12 +22,11 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         recycler();
-        InformationCenter.start(getApplicationContext(), rv);
+        BusinessCenter.start(rv);
     }
 
     private void recycler() {
         rv = (RecyclerView) findViewById(R.id.rview);
         rv.setLayoutManager(new LinearLayoutManager(this));
     }
-
 }

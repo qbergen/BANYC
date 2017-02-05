@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,28 +16,31 @@ import com.example.queenabergen.banyc.subjects.youthemploy.YouthEmployment;
 
 import java.util.List;
 
-import static com.example.queenabergen.banyc.R.layout.item;
-
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
 
     public static class ResourceVH extends RecyclerView.ViewHolder {
-        List<YouthEmployment> mapData;
-        String latitude,longitude, programName, programSite, programTypeName;
-        CardView cv;
-        TextView siteName, programType, location_1, agency, boroughCommunity, program, gradeLevelAgeGroup, contactNumber;
+        private String latitude,longitude, programName, programSite, programTypeName;
+        private CardView cv;
+        private TextView siteName,
+                programType,
+                agency,
+                boroughCommunity,
+                program,
+                gradeLevelAgeGroup,
+                contactNumber;
+
+        private Button exitBtn;
 
         ResourceVH(final View itemView) {
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.cv2);
             siteName = (TextView) itemView.findViewById(R.id.site_name);
             programType = (TextView) itemView.findViewById(R.id.program_type);
-            location_1 = (TextView) itemView.findViewById(R.id.location);
             agency = (TextView) itemView.findViewById(R.id.agency);
             boroughCommunity = (TextView) itemView.findViewById(R.id.borough_community);
             program = (TextView) itemView.findViewById(R.id.program);
             gradeLevelAgeGroup = (TextView) itemView.findViewById(R.id.grade_level);
             contactNumber = (TextView) itemView.findViewById(R.id.contact_number);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -68,9 +72,10 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
             programSite = youthEmployment.getSiteName();
             programTypeName = youthEmployment.getProgramType();
         }
+
     }
 
-    List<YouthEmployment> data;
+    private List<YouthEmployment> data;
 
     public RvAdapter(List<YouthEmployment> data) {
         this.data = data;
@@ -98,11 +103,12 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
         resourceVH.gradeLevelAgeGroup.setText(data.get(i).getGradeLevelAgeGroup());
         resourceVH.contactNumber.setText(data.get(i).getContactNumber());
         resourceVH.sendMapInfo(data.get(i));
+
     }
 
     @Override
     public int getItemCount() {
         return data.size();
-//        return 25;
     }
+
 }
