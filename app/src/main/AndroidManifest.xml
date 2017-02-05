@@ -22,32 +22,31 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NaviActivity">
+        <activity android:name=".NaviActivity"/>
         <activity android:name=".MainActivity" />
-        <!--<activity android:name=".CreateAccount" />-->
-        <!--</activity>-->
         <activity android:name=".CreateAccount"></activity>
         <activity
             android:name=".LandingPage"
             android:label="@string/title_activity_navi"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!--<activity android:name=".ArtsAdapter"></activity>-->
-        <!--<activity-->
+        <activity
             android:name=".maps.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".subjects.business.BusinessPage"></activity>
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <!--<activity android:name=".NaviActivity"></activity>-->
         <activity android:name=".ArtsManagementPage" />
         <activity android:name=".HomePage"></activity>
         <activity android:name=".sportsresources.SportsRv"></activity>
+        <activity android:name=".facebook.FacebookLoginActivity"></activity>
+        <activity android:name=".google.GoogleLoginActivity"></activity>
+
     </application>
 
 </manifest>
