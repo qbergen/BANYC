@@ -9,6 +9,7 @@
     <color name="greenish">#4DB6AC</color>
     <color name="greyish">#E0E0E0</color>
     <color name="darkgrey">#424242</color>
+    <color name="black">#000</color>
 
 
 </resources>
