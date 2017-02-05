@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homeicon"
+            android:title="Home" />
         <item
             android:id="@+id/nav_arts"
             android:icon="@drawable/artnaviicon"
@@ -17,8 +22,8 @@
 
         <item
             android:id="@+id/youth_employment"
-            android:icon="@drawable/stemnaviicon"
-            android:title="S.T.E.M" />
+            android:icon="@drawable/stevejobs"
+            android:title="Youth Employment" />
     </group>
 
     <item android:title="Communicate">
