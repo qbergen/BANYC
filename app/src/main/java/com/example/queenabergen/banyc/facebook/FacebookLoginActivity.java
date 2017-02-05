@@ -35,11 +35,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
                     AccessToken currentAccessToken) {
                 // Set the access token using
                 // currentAccessToken when it's loaded or set.
-//                accessToken = currentAccessToken;
-//                setCurrentAccessToken(accessToken);
-//                LoginManager.getInstance().logInWithReadPermissions(
-//                        FacebookLoginActivity.this,
-//                        Arrays.asList("email"));
             }
         };
         // If the access token is available already assign it.
