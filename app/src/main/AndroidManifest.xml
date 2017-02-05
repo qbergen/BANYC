@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".navigation.NavigationActivity" />
         <activity android:name=".CreateAccount" />
 
         <meta-data
@@ -31,14 +30,9 @@
             android:name=".LandingPage"
             android:label="@string/title_activity_navi"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".NaviActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ArtsManagementPage"></activity>
+        <activity android:name=".NaviActivity"></activity>
+        <activity android:name=".ArtsManagementPage" />
+        <activity android:name=".HomePage"></activity>
     </application>
 
 </manifest>

@@ -16,17 +16,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 public class NaviActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private ViewFlipper flip;
+    private float initialX;
 
     ImageView imageView;
     private static final String TAG = " ";
@@ -54,24 +56,33 @@ public class NaviActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        loginView();
-        animFadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
-        animFadeOut.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
+        setBullentinBoard();
+    }
 
-            }
+    public void setBullentinBoard() {
+        int[] homePagePhotos = {R.drawable.youthiconapp88, R.drawable.employment, R.drawable.ladderposter,
+                R.drawable.scienceflip, R.drawable.youthprogram, R.drawable.employmenttwo,
+                R.drawable.nycwellflip, R.drawable.volunteerflip};
+        ImageView picture1 = (ImageView) findViewById(R.id.picture1);
+        ImageView picture2 = (ImageView) findViewById(R.id.picture2);
+        ImageView picture3 = (ImageView) findViewById(R.id.picture3);
+        ImageView picture4 = (ImageView) findViewById(R.id.picture4);
+        ImageView picture5 = (ImageView) findViewById(R.id.picture5);
+        ImageView picture6 = (ImageView) findViewById(R.id.picture6);
+        ImageView picture7 = (ImageView) findViewById(R.id.picture7);
+        ImageView picture8 = (ImageView) findViewById(R.id.picture8);
 
-            @Override
-            public void onAnimationEnd(Animation animation) {
+        for (int i = 0; i < homePagePhotos.length - 1; i++) {
+            ImageView[] viewFlipperImages = {picture1, picture2, picture3, picture4,
+                    picture5, picture6, picture7, picture8};
+            Picasso.with(getApplicationContext()).load(homePagePhotos[i]).into(viewFlipperImages[i]);
+        }
 
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        flip = (ViewFlipper) findViewById(R.id.home_Viewer);
+        flip.setInAnimation(this, R.anim.right_enter);
+        flip.setOutAnimation(this, R.anim.left_out);
+        flip.setFlipInterval(2000);
+        flip.startFlipping();
     }
 
 
@@ -160,7 +171,9 @@ public class NaviActivity extends AppCompatActivity
         if (id == R.id.nav_arts) {
             Intent artsIntent = new Intent(getApplicationContext(), ArtsManagementPage.class);
             startActivity(artsIntent);
-        } else if (id == R.id.nav_athletics) {
+        } else if (id == R.id.nav_home) {
+            Intent backHome = new Intent(getApplicationContext(), NaviActivity.class);
+            startActivity(backHome);
 
         } else if (id == R.id.nav_stem) {
 
