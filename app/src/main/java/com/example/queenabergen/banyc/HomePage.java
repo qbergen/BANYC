@@ -1,19 +1,21 @@
 package com.example.queenabergen.banyc;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ViewFlipper;
 
-public class MainActivity extends AppCompatActivity {
+public class HomePage extends AppCompatActivity {
+    private ViewFlipper flip;
+    private float initialX;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_home_page);
 
     }
+
 
 
 }

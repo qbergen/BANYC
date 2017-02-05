@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homeicon"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_arts"
+            android:icon="@drawable/artnaviicon"
+            android:title="Arts" />
+        <item
+            android:id="@+id/nav_athletics"
+            android:icon="@drawable/sportsnaviicon"
+            android:title="Athletics" />
+        <item
+            android:id="@+id/nav_stem"
+            android:icon="@drawable/stemnaviicon"
+            android:title="S.T.E.M" />
+
+        <item
+            android:id="@+id/youth_employment"
+            android:icon="@drawable/stevejobs"
+            android:title="Youth Employment" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

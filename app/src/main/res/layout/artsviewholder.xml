@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightYellow"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.queenabergen.banyc.MainActivity">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/arts_viewHolder"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/imageOfOrganization"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:id="@+id/textSide"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="160dp">
+
+            <TextView
+                android:id="@+id/orgTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/addressLine"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/orgTitle" />
+
+            <TextView
+                android:id="@+id/clickHere"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/addressLine" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

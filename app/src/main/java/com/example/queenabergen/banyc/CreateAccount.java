@@ -31,7 +31,7 @@ public class CreateAccount extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.createaccount);
         mfirstName = (EditText) findViewById(R.id.first_Name);
         mLastName = (EditText) findViewById(R.id.last_Name);
         emailInput = (EditText) findViewById(R.id.email_Input);
@@ -49,6 +49,10 @@ public class CreateAccount extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         String emailaddress = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
+        if(password.length() < 5){
+            Toast.makeText(CreateAccount.this, "Your password must be 6 characters in length",
+                    Toast.LENGTH_LONG).show();
+        }
         String firstName = mfirstName.getText().toString();
         String lastName = mfirstName.getText().toString();
         mAuth.createUserWithEmailAndPassword(emailaddress, password)
