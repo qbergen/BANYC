@@ -12,4 +12,6 @@
     <string name="googlelogin">Sign in with Google</string>
     <string name="signed_in_fmt">%S</string>
     <string name="server_client_id">881198950310-</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="loading">Loading...</string>
 </resources>
