@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import com.example.queenabergen.banyc.sportsresources.SportsRv;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
@@ -72,7 +73,7 @@ public class NaviActivity extends AppCompatActivity
         ImageView picture7 = (ImageView) findViewById(R.id.picture7);
         ImageView picture8 = (ImageView) findViewById(R.id.picture8);
 
-        for (int i = 0; i < homePagePhotos.length - 1; i++) {
+        for (int i = 0; i < homePagePhotos.length; i++) {
             ImageView[] viewFlipperImages = {picture1, picture2, picture3, picture4,
                     picture5, picture6, picture7, picture8};
             Picasso.with(getApplicationContext()).load(homePagePhotos[i]).into(viewFlipperImages[i]);
@@ -175,7 +176,9 @@ public class NaviActivity extends AppCompatActivity
             Intent backHome = new Intent(getApplicationContext(), NaviActivity.class);
             startActivity(backHome);
 
-        } else if (id == R.id.nav_stem) {
+        } else if (id == R.id.nav_athletics) {
+            Intent goToSports = new Intent(getApplicationContext(), SportsRv.class);
+            startActivity(goToSports);
 
         } else if (id == R.id.youth_employment) {
             Intent intent2 = new Intent(getApplicationContext(), LandingPage.class);
