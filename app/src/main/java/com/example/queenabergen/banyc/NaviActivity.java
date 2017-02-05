@@ -21,8 +21,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import com.example.queenabergen.banyc.subjects.business.BusinessPage;
 import com.example.queenabergen.banyc.sportsresources.SportsRv;
-import com.google.firebase.auth.FirebaseAuth;
+  import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
@@ -172,6 +173,10 @@ public class NaviActivity extends AppCompatActivity
         if (id == R.id.nav_arts) {
             Intent artsIntent = new Intent(getApplicationContext(), ArtsManagementPage.class);
             startActivity(artsIntent);
+        } else if (id == R.id.nav_athletics) {
+            Intent businessInten = new Intent(getApplicationContext(), BusinessPage.class);
+            startActivity(businessInten);
+        } else if (id == R.id.nav_stem) {
         } else if (id == R.id.nav_home) {
             Intent backHome = new Intent(getApplicationContext(), NaviActivity.class);
             startActivity(backHome);

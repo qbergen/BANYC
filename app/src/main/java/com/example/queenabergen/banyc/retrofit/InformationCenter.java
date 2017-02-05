@@ -41,8 +41,6 @@ public class InformationCenter {
             public void onResponse(Call<List<YouthEmployment>> call, Response<List<YouthEmployment>> response) {
                 info = response.body();
                 initializeAdapter();
-                //todo pass the info to the RecyclerView Adapter, below :
-                // (Make sure to use, "rv" that's passed into this method)
 
                 Toast.makeText(applicationContext,"Receiving Program Info", Toast.LENGTH_LONG).show();
             }
