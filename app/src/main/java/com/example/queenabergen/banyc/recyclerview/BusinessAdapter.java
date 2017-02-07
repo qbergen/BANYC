@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.queenabergen.banyc.R;
+import com.example.queenabergen.banyc.subjects.business.BusinessInfo;
 
 import java.util.List;
 
@@ -15,9 +16,9 @@ import java.util.List;
 
 public class BusinessAdapter extends RecyclerView.Adapter<BusinessViewHolder> {
 
-    private List<String> description;
+    private List<BusinessInfo> description;
 
-    public BusinessAdapter(List<String> data) {
+    public BusinessAdapter(List<BusinessInfo> data) {
         description = data;
     }
 
