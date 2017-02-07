@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_home_page"
     android:layout_width="match_parent"
@@ -12,6 +13,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.queenabergen.banyc.HomePage">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/yellow"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/youth_Icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/youthicon" />
+
+            <TextView
+                android:id="@+id/user_Name_Displayed"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="Youth 101"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
 
     <ViewFlipper
         android:id="@+id/home_Viewer"
@@ -30,8 +62,8 @@
             android:id="@+id/picture2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/picture3"
@@ -43,22 +75,22 @@
             android:id="@+id/picture4"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/picture5"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/picture6"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/picture7"

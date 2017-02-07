@@ -1,6 +1,8 @@
 package com.example.queenabergen.banyc;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -25,33 +27,42 @@ import com.squareup.picasso.Picasso;
 
 public class NaviActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private ViewFlipper flip;
-    private float initialX;
 
-    public GridLayoutManager gridLayoutManager;
-    public HomePageAdapter homePageAdapter;
+    private ViewFlipper flip;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
+    private DrawerLayout drawer;
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activenavi);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        hamburgerToolBar();
+        drawers();
+        naviView();
+        setBullentinBoard();
+    }
+
+    public void hamburgerToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_homepage);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void drawers() {
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
-        toggle.syncState();
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+    }
+    public void naviView() {
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
         navigationView.setNavigationItemSelectedListener(this);
-        setBullentinBoard();
-
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.homePageRecView);
-        gridLayoutManager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
-        homePageAdapter = new HomePageAdapter();
-        recyclerView.setAdapter(homePageAdapter);
     }
 
     public void setBullentinBoard() {
@@ -100,19 +111,16 @@ public class NaviActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        toggle.syncState();
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -146,9 +154,8 @@ public class NaviActivity extends AppCompatActivity
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

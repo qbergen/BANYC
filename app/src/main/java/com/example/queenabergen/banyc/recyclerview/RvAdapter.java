@@ -44,10 +44,6 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ResourceVH> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    CharSequence text = "you clicked";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(itemView.getContext(), text, duration);
-                    toast.show();
                     if (latitude == null && longitude == null) {
                         Toast.makeText(itemView.getContext(), "Cannot find the location on map", Toast.LENGTH_LONG).show();
                     }
