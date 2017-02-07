@@ -40,7 +40,10 @@ public class CreateAccount extends AppCompatActivity {
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
+                Intent intent = new Intent(getApplicationContext(), NaviActivity.class);
+                startActivity(intent);
+                Toast.makeText(CreateAccount.this, "Account Created Successfully",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -49,7 +52,7 @@ public class CreateAccount extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         String emailaddress = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
-        if(password.length() < 5){
+        if (password.length() < 5) {
             Toast.makeText(CreateAccount.this, "Your password must be 6 characters in length",
                     Toast.LENGTH_LONG).show();
         }

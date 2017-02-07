@@ -22,7 +22,7 @@ public class ArtsAdapter extends RecyclerView.Adapter<ArtsAdapter.MyViewHolder> 
     private String[] organizationNames = {"The Met After School Arts Program", "The Apollo Theater Internship Program",
             "BCAPTEEN Creative Leadership Project", "CUNY After-School Theater"};
     private String[] organizationAgeTarget = {"18m to 12 years old", "Rising High School Seniors", " 13 to 17 years old",
-    "High School Students ", " "};
+            "High School Students ", " "};
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 

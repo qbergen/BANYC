@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public EditText emailInput;
     public EditText passwordInput;
 
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
-
         callbackManager = CallbackManager.Factory.create();
         loginView();
     }

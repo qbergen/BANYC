@@ -27,7 +27,6 @@ android {
             zipAlignEnabled true
         }
     }
-
 }
 repositories {
     mavenCentral()
